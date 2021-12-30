@@ -282,7 +282,11 @@ class OLEDDisplay : public Print {
 
     // Get screen geometry
     uint16_t getWidth(void);
+    // Get screen geometry
     uint16_t getHeight(void);
+
+    // Get current set font height
+    uint16_t getFontHeight(void);
 
     // Implement needed function to be compatible with Print class
     size_t write(uint8_t c);

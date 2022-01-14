@@ -288,6 +288,9 @@ class OLEDDisplay : public Print {
     // Get current set font height
     uint16_t getFontHeight(void);
 
+    //clear a textline on the display
+    void clearTextLine(int y, OLEDDISPLAY_COLOR fillColor);
+
     // Implement needed function to be compatible with Print class
     size_t write(uint8_t c);
     size_t write(const char* s);

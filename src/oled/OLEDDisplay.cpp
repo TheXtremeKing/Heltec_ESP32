@@ -870,6 +870,15 @@ uint16_t OLEDDisplay::getFontHeight(void) {
   return pgm_read_byte(fontData +HEIGHT_POS);
 }
 
+//clear a textline on the display
+void OLEDDisplay::clearTextLine(int y, OLEDDISPLAY_COLOR fillColor)
+{
+  OLEDDISPLAY_COLOR origColor = getColor();
+  setColor(fillColor);
+  fillRect(0, y, getWidth(), getFontHeight());
+  setColor(origColor);
+}
+
 bool OLEDDisplay::setLogBuffer(uint16_t lines, uint16_t chars){
   if (logBuffer != NULL) free(logBuffer);
   uint16_t size = lines * chars;
